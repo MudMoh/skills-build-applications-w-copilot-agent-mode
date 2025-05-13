@@ -4,6 +4,14 @@ from datetime import date
 client = pymongo.MongoClient("mongodb://localhost:27017/")
 db = client["octofit_db"]
 
+
+# Clear collections before inserting test data
+db.users.delete_many({})
+db.teams.delete_many({})
+db.activity.delete_many({})
+db.leaderboard.delete_many({})
+db.workouts.delete_many({})
+
 # Insert test users
 db.users.insert_many([
     {"email": "alice@example.com", "name": "Alice", "password": "alicepass", "team_id": None},
