@@ -1,3 +1,6 @@
+# To install pymongo, run:
+# pip install pymongo
+
 import pymongo
 from datetime import date
 
